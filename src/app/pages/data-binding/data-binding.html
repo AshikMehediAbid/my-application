@@ -1,1 +1,26 @@
-<p>data-binding works!</p>
+<h2>data-binding Example!</h2>
+
+<p>Employee Name: {{employeeName}}</p>
+
+<!-- Interpolation -->
+<input type="text" value="{{deptName}}" >
+<!-- Property binding -->
+<input type="text" [value]="deptName" >
+
+<p [class]="myClassName" >Angular Data Binding</p>
+
+<input [type] = "inputType" value="Check me!">
+
+<p>Event binding example</p>
+<button (click)="showMessage()">Click Me</button>
+<br>
+<br>
+<select (change)="selectedDept($event)" >
+    <option value="Select">--Select Dept--</option>
+    <option value="HR">HR</option>
+    <option value="IT">IT</option>
+    <option value="Finance">Finance</option>
+</select>
+
+
+

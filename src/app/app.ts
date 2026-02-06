@@ -3,10 +3,17 @@ import { RouterOutlet } from '@angular/router';
 import { EmployeeList } from './pages/employee-list/employee-list';
 import { AddEmployee } from './pages/add-employee/add-employee';
 import { Variables } from './pages/variables/variables';
+import { DataBinding } from './pages/data-binding/data-binding';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,EmployeeList,AddEmployee, Variables],
+  imports: [
+    RouterOutlet,
+    EmployeeList,
+    AddEmployee,
+    Variables,
+    DataBinding
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
