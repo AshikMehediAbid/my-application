@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { EmployeeList } from './pages/employee-list/employee-list';
 import { AddEmployee } from './pages/add-employee/add-employee';
 import { Variables } from './pages/variables/variables';
@@ -9,6 +9,7 @@ import { DataBinding } from './pages/data-binding/data-binding';
   selector: 'app-root',
   imports: [
     RouterOutlet,
+    RouterLink,
     EmployeeList,
     AddEmployee,
     Variables,
