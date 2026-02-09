@@ -5,6 +5,7 @@ import { EmployeeList } from './pages/employee-list/employee-list';
 import { Variables } from './pages/variables/variables';
 import { NotFound } from './pages/not-found/not-found';
 import { Home } from './pages/home/home';
+import { Signals } from './pages/signals/signals';
 
 export const routes: Routes = [
     {
@@ -31,6 +32,10 @@ export const routes: Routes = [
     {
         path: 'variables',
         component: Variables,
+    },
+  {
+        path: 'signals',
+        component: Signals,
     },
     {
         path: '**',
