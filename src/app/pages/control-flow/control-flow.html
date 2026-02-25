@@ -11,40 +11,46 @@
         </div>
     }
 </div>
-
+<br><br>
 <div class="row">
-    <button (click)="ToggleLabelVisbility()">Toggle</button>
-</div>
-<div class="row">
-    @if(showSuccessLabel())
-    {
-        <label class="label-success">Success!</label>
-    }
-    @else
-    {
-        <label class="label-danger">Error!</label>
-    }
-    
-</div>
-
-<div class="row">
-    <input type="number" [(ngModel)]="marks">
+    <div class="col-1">
+        <button (click)="ToggleLabelVisbility()">Toggle</button>
+    </div>
+    <div class="col-1">
+        @if(showSuccessLabel())
+        {
+            <label class="label-success">Success!</label>
+        }
+        @else
+        {
+            <label class="label-danger">Error!</label>
+        }
+    </div>
 </div>
 
+<br><br>
+
 <div class="row">
-    @if(marks >= 80)
-    {
-        <span>A+</span>
-    }
-    @else if(marks >= 60)
-    {
-        <span>A-</span>
-    }
-    @else
-    {
-        <span>B</span>
-    }
+    <div class="col-3">
+        <input type="number" [(ngModel)]="marks">
+    </div>
+    <div class="col-1">
+        <span>Grade: </span>
+        @if(marks >= 80)
+        {
+            <span>A+</span>
+        }
+        @else if(marks >= 60)
+        {
+            <span>A-</span>
+        }
+        @else
+        {
+            <span>B</span>
+        }
+    </div>
 </div>
+
 <br>
 <br>
 <div class="row">
