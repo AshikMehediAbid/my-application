@@ -1,0 +1,79 @@
+<p>control-flow works!</p>
+
+<div class="row">
+    <div class="col-md-3">
+        <input type="checkbox" [(ngModel)] = "isShowTextBox" > Show Text Box
+    </div>
+    @if(isShowTextBox)
+    {
+        <div class="col-md-3">
+            <input type="text">
+        </div>
+    }
+</div>
+
+<div class="row">
+    <button (click)="ToggleLabelVisbility()">Toggle</button>
+</div>
+<div class="row">
+    @if(showSuccessLabel())
+    {
+        <label class="label-success">Success!</label>
+    }
+    @else
+    {
+        <label class="label-danger">Error!</label>
+    }
+    
+</div>
+
+<div class="row">
+    <input type="number" [(ngModel)]="marks">
+</div>
+
+<div class="row">
+    @if(marks >= 80)
+    {
+        <span>A+</span>
+    }
+    @else if(marks >= 60)
+    {
+        <span>A-</span>
+    }
+    @else
+    {
+        <span>B</span>
+    }
+</div>
+<br>
+<br>
+<div class="row">
+    <p>Available Courses:</p>
+    <ul>
+        @for(course of courses; track $index)
+        {
+            <li>{{course}}</li>
+        }
+    </ul>
+</div>
+
+<br>
+<br>
+
+<p>Student Table</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <th>Roll</th>
+        <th>Name</th>
+    </thead>
+    <tbody>
+        @for(student of studentList; track student.roll)
+        {
+            <tr>
+                <td>{{student.roll}}</td>
+                <td>{{student.name}}</td>
+            </tr>
+        }
+    </tbody>
+</table>

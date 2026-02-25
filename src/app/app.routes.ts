@@ -6,6 +6,7 @@ import { Variables } from './pages/variables/variables';
 import { NotFound } from './pages/not-found/not-found';
 import { Home } from './pages/home/home';
 import { Signals } from './pages/signals/signals';
+import { ControlFlow } from './pages/control-flow/control-flow';
 
 export const routes: Routes = [
     {
@@ -33,9 +34,13 @@ export const routes: Routes = [
         path: 'variables',
         component: Variables,
     },
-  {
+    {
         path: 'signals',
         component: Signals,
+    },
+    {
+        path: 'control-flow',
+        component: ControlFlow,
     },
     {
         path: '**',
