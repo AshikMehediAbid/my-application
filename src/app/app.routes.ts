@@ -7,6 +7,7 @@ import { NotFound } from './pages/not-found/not-found';
 import { Home } from './pages/home/home';
 import { Signals } from './pages/signals/signals';
 import { ControlFlow } from './pages/control-flow/control-flow';
+import { AttributeDirective } from './pages/attribute-directive/attribute-directive';
 
 export const routes: Routes = [
     {
@@ -41,6 +42,10 @@ export const routes: Routes = [
     {
         path: 'control-flow',
         component: ControlFlow,
+    },
+    {
+        path: 'attribute-directive',
+        component: AttributeDirective,
     },
     {
         path: '**',

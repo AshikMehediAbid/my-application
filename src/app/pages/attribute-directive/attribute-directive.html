@@ -1,0 +1,41 @@
+<p>attribute-directive works!</p>
+<br><br>
+
+<div class="text-color" [ngClass]="myClass">Div1</div>
+<br><br>
+<button
+    class="btn" 
+    (click)="isActive = !isActive" 
+    [ngClass] = "isActive ? 'bg-success' : 'bg-danger'" >
+    Toggle Class
+</button>
+
+<br><br>
+
+<div class="row">
+
+    <div class="col-3">
+        <input type="number" [(ngModel)]="marks" >
+    </div>
+    <div class="col-2">
+        <p [ngClass] = "marks >= 33 ? 'text-success' : 'text-danger'" >
+          {{marks>0 ? "Marks: " + marks + "  (" + (marks >= 33 ? 'Pass' : 'Fail') +")"  : "Enter Marks"   }} 
+        </p>        
+    </div>
+
+</div>
+
+<br><br>
+
+<div class="row">
+    <div class="col-3">
+        <input type="text" [(ngModel)] = "backColor" placeholder= "Enter Background color" >
+    </div>
+    <div class="col-3" style="border: 1px solid black;" [ngStyle]= "{ 'background-color': backColor }">Your Selected color is {{backColor}}</div>
+</div>
+
+<br><br>
+
+<div [ngStyle]="myCustomCss" >
+    This is custom CSS
+</div>
