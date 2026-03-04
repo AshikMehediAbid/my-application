@@ -1,0 +1,82 @@
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="card-header bg-primary text-white">Employee Form</div>
+    <div class="card-body">
+      <form #formDate="ngForm">
+        <!-- Name -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Employee Name</label>
+          <input type="text" #empName="ngModel" class="form-control" name="something-needed" id="name" [(ngModel)] = "empObj.name" placeholder="Enter employee name" minlength="5" required/>
+          <div class="text-danger">
+            @if(empName.touched || empName.dirty)
+            {
+                @if(empName.errors?.['required'])
+                {
+                    <span>Name is required</span>
+                }
+                @else if(empName.errors?.['minlength'])
+                {
+                    <span>Name must be at least 5 characters long</span>
+                }
+            }
+          </div>
+        </div>
+
+        <!-- Role -->
+        <div class="mb-3">
+          <label for="role" class="form-label">Role</label>
+          <input type="text" class="form-control" name="roleName" id="role" [(ngModel)] = "empObj.role" placeholder="Enter role" />
+        </div>
+
+        <!-- Department -->
+        <div class="mb-3">
+          <label for="dept" class="form-label">Department</label>
+          <select class="form-select" name="deptName" id="dept" [(ngModel)] = "empObj.dept">
+            <option selected disabled>Select department</option>
+            <option value="HR">HR</option>
+            <option value="IT">IT</option>
+            <option value="Finance">Finance</option>
+            <option value="Sales">Sales</option>
+            <option value="Marketing">Marketing</option>
+          </select>
+        </div>
+
+        <!-- Salary -->
+        <div class="mb-3">
+          <label for="salary" class="form-label">Salary</label>
+          <input type="number" class="form-control" name="salaryName" id="salary" [(ngModel)] = "empObj.salary" placeholder="Enter salary" />
+        </div>
+
+        <!-- Active Status -->
+        <div class="mb-3">
+          <label class="form-label d-block">Is Active</label>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="isActive"
+              id="activeYes"
+              value="true"
+            />
+            <label class="form-check-label" for="activeYes">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="isActive"
+              id="activeNo"
+              value="false"
+              checked
+            />
+            <label class="form-check-label" for="activeNo">No</label>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" [disabled] = "formDate.invalid" class="btn btn-success">Submit</button>
+        <button type="reset" class="btn btn-secondary ms-2">Reset</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -8,48 +8,52 @@ import { Home } from './pages/home/home';
 import { Signals } from './pages/signals/signals';
 import { ControlFlow } from './pages/control-flow/control-flow';
 import { AttributeDirective } from './pages/attribute-directive/attribute-directive';
+import { TemplateForm } from './pages/template-form/template-form';
 
 export const routes: Routes = [
-    {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full',
-    },
-    {
-        path: 'home',
-        component: Home,
-    },
-    {
-        path: 'add-employee',
-        component: AddEmployee,
-    },
-    {
-        path: 'data-binding',
-        component: DataBinding,
-    },
-    {
-        path: 'employee-list',
-        component: EmployeeList,
-    },
-    {
-        path: 'variables',
-        component: Variables,
-    },
-    {
-        path: 'signals',
-        component: Signals,
-    },
-    {
-        path: 'control-flow',
-        component: ControlFlow,
-    },
-    {
-        path: 'attribute-directive',
-        component: AttributeDirective,
-    },
-    {
-        path: '**',
-        component: NotFound,
-    }
-
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: Home,
+  },
+  {
+    path: 'add-employee',
+    component: AddEmployee,
+  },
+  {
+    path: 'data-binding',
+    component: DataBinding,
+  },
+  {
+    path: 'employee-list',
+    component: EmployeeList,
+  },
+  {
+    path: 'variables',
+    component: Variables,
+  },
+  {
+    path: 'signals',
+    component: Signals,
+  },
+  {
+    path: 'control-flow',
+    component: ControlFlow,
+  },
+  {
+    path: 'attribute-directive',
+    component: AttributeDirective,
+  },
+  {
+    path: 'template-form',
+    component: TemplateForm,
+  },
+  {
+    path: '**',
+    component: NotFound,
+  },
 ];
