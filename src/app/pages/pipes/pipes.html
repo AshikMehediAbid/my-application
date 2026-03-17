@@ -1,0 +1,45 @@
+<p>{{ department }}</p>
+
+<br><br>
+
+<p>{{ upperCasePipeExample | uppercase }}</p>
+
+<br><br>
+
+<p>{{ lowerCasePipeExample | lowercase }}</p>
+
+<br><br>
+
+<p>{{ titleCasePipeExample | titlecase }}</p>
+
+<br><br>
+
+<p>Date without pipe</p>
+<p>{{date}}</p>
+
+<br>
+<p>Date with pipe</p>
+<p>{{date | date}}</p>
+
+<br>
+<p>Date with pipe - custom format</p>s
+<p>{{date | date:"dd-MM-yyyy"}}</p> 
+<p>{{date | date:"dd-MM-yyyy"}}</p>
+
+<p>Hour:minute:second</p>
+<p>{{date | date:"hh:mm:ss"}}</p> 
+
+<p>Students List</p>
+<p>{{students}}</p>
+
+<p>Students List with Slice Pipe 1:2 [One element]</p>
+<p>{{students | slice:1:2}}</p>
+<BR>
+<p>Pipe example for string</p>
+<p>{{text | slice:0:16}}</p>
+
+<p>Student Object</p>
+<p>{{studentObj}}</p>
+
+<p>Student Object with Json Pipe</p>
+<p>{{studentObj | json}}</p>

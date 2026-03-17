@@ -10,6 +10,7 @@ import { ControlFlow } from './pages/control-flow/control-flow';
 import { AttributeDirective } from './pages/attribute-directive/attribute-directive';
 import { TemplateForm } from './pages/template-form/template-form';
 import { ReactiveForm } from './pages/reactive-form/reactive-form';
+import { Pipes } from './pages/pipes/pipes';
 
 export const routes: Routes = [
   {
@@ -56,6 +57,10 @@ export const routes: Routes = [
   {
     path: 'reactive-form',
     component: ReactiveForm,
+  },
+  {
+    path: 'pipes',
+    component: Pipes,
   },
   {
     path: '**',
