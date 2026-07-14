@@ -1,0 +1,27 @@
+<h1>Todos</h1>
+<hr>
+
+<div class="row">
+    <div class="col-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(todo of todoList; track $index)
+                {
+                    <tr>
+                        <td>{{todo.userId}}</td>
+                        <td>{{todo.id}}</td>
+                        <td>{{todo.title}}</td>
+                        <td>{{todo.completed}}</td>
+                    </tr>
+                }
+        </table>
+    </div>
+</div>
