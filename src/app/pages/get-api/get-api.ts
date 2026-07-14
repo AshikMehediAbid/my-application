@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { Todo } from '../../services/todo';
 
 @Component({
   selector: 'app-get-api',
@@ -9,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetApi implements OnInit {
 
+  // Second way to inject services
+  _todoService = inject(Todo)
+
   todoList: any[] = [];
   
   constructor(private httpe: HttpClient)
   {
-
+    var result = this._todoService.ConcatStrings("Learning", "Angular");
+    console.log(result);
   }
   ngOnInit(){
     this.getTodos();
@@ -21,9 +26,13 @@ export class GetApi implements OnInit {
 
   getTodos()
   {
-    this.httpe.get("https://jsonplaceholder.typicode.com/todos").subscribe( (response) =>
+    this._todoService.getTodos().subscribe( 
     {
-      this.todoList = response as any[];
+      next: (response) =>
+      {
+        debugger;
+        this.todoList = response as any[];
+      }
     })
   }
 }
