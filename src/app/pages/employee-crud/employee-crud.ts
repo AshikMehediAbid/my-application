@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -13,8 +13,9 @@ export class EmployeeCrud implements OnInit {
 
   http = inject(HttpClient);
 
-  empList: Employee[] = [];
 
+  //empList: Employee[] = [];
+  empList = signal<Employee[]>([]);
   ngOnInit() {
     console.log('ngOnInit');
     this.getAllEmployees();
@@ -25,7 +26,7 @@ export class EmployeeCrud implements OnInit {
     this.http.get('https://68397a596561b8d882b08dd5.mockapi.io/api/v1/employee').subscribe({
       next: (response) => {
         debugger;
-        this.empList = response as Employee[];
+        this.empList.set(response as Employee[]);
       }
     });
   }

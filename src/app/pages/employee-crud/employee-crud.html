@@ -20,7 +20,7 @@
             </thead>
 
             <tbody>
-              @for (emp of empList; track $index) {
+              @for (emp of empList(); track $index) {
                 <tr>
                   <td>{{ emp.id }}</td>
                   <td>{{ emp.name }}</td>
@@ -53,7 +53,6 @@
             <input
               type="number"
               class="form-control"
-              [value]="employee.id"
               [(ngModel)]="employee.id"
               name="employeeId"
             />
@@ -64,7 +63,6 @@
             <input
               type="text"
               class="form-control"
-              [value]="employee.name"
               [(ngModel)]="employee.name"
               name="employeeName"
             />
@@ -75,7 +73,6 @@
             <input
               type="text"
               class="form-control"
-              [value]="employee.department"
               [(ngModel)]="employee.department"
               name="employeeDepartment"
             />

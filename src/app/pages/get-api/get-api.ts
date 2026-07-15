@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Todo } from '../../services/todo';
 
 @Component({
@@ -13,7 +13,8 @@ export class GetApi implements OnInit {
   // Second way to inject services
   _todoService = inject(Todo)
 
-  todoList: any[] = [];
+  //todoList: any[] = [];
+  todoList = signal<any[]>([]);
   
   constructor(private httpe: HttpClient)
   {
@@ -31,7 +32,7 @@ export class GetApi implements OnInit {
       next: (response) =>
       {
         debugger;
-        this.todoList = response as any[];
+        this.todoList.set(response as any[]);
       }
     })
   }
